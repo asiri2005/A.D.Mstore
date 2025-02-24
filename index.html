@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <link rel="stylesheet" href="Stylecover.CSS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.D.M store</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1;
+            padding: 0;
+            background-color: rgb(186, 194, 193);
+        }
+        
+
+        header {
+            background-color: #333;
+            color: hwb(0 100% 0%);
+            padding: 30px 20px;
+            text-align: left;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .search-bar {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cover-photo {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; 
+        }
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .cover-photo img.active {
+            opacity: 1;
+        }
+        .container {
+            padding: 30px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 100px;
+        }
+        .product {
+            background-color: hwb(0 99% 1%);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            max-width: 20%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .product p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .contact-info {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .about {
+            background-color: hwb(0 18% 81%) ;
+            color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%; /* Full width */
+            /* Remove position: fixed; */
+            position: static; /* Default position */
+        }
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Tab Styles */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A.D.M store</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a> 
+            <a href="#contact">Contact</a>
+       
+            
+           
+        </nav>
+    </header>
+   
+    <div class="cover-photo">
+        <img src="cover 1.jpg" alt="Cover Photo 1" class="active">
+        <img src="cover 2.jpg" alt="Cover Photo 2">
+        <img src="cover 3.jpg" alt="Cover Photo 3">
+    </div>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+    </div>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to A.D.M store</h2>
+            <p>This is the home page of our online store. Explore our products and services.</p>
+        </section>
+
+        <!-- Products Tab Section -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Products')">Products</button>
+        </div>
+
+        <div id="Products" class="tabcontent">
+            <div class="products">
+                <div class="product">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Custom LED Flashing Billsby Light Pins</h3>
+                    <p>Price: $8.87</p>
+                    <p>Bulk Price: $0.43</p>
+                </div>
+                <div class="product">
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>Living Helicopter with Multicolor LED</h3>
+                    <p>Price: $0.49</p>
+                    <p>Bulk Price: As low as $0.34</p>
+                </div>
+                <div class="product">
+                    <img src="product3.jpg" alt="Product 3">
+                    <h3>Black Light LED Light Keychain Flashlight</h3>
+                    <p>Price: $0.99</p>
+                    <p>Reviews: 1</p>
+                </div>
+                <div class="product">
+                    <img src="product4.jpg" alt="Product 4">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product5.jpg" alt="Product 5">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product6.jpg" alt="Product 6">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product7.jpg" alt="Product 7">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product8.jpg" alt="Product 8">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product9.jpg" alt="Product 9">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+                <div class="product">
+                    <img src="product10.jpg" alt="Product 10">
+                    <h3>Red Heat Flashing Battery Operated Body Light Lapel</h3>
+                    <p>Price: $1.79</p>
+                    <p>Bulk Price: As low as $1.44</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about">
+                <h2>About Us</h2>
+                <p>Welcome to A.D.M STORE, your trusted platform for discovering and purchasing luxury beauty products through affiliate marketing. We connect you with high-quality skincare, makeup, nail art, and fragrance brands, helping you find the best deals from top-tier beauty retailers worldwide.</p>
+                <p>Why Shop with A.D.M STORE?</p>
+                <ul>
+                    <li>Exclusive Deals – We bring you the best offers and discounts on premium beauty products.</li>
+                    <li>Trusted Partnerships – Featuring only reputable and high-end beauty brands.</li>
+                    <li>Effortless Shopping – Browse, compare, and shop from trusted affiliate links.</li>
+                    <li>Curated Collections – Handpicked selections for a luxurious beauty experience.</li>
+                </ul>
+                <p>At A.D.M STORE, we make luxury beauty shopping easy and rewarding. Browse our collections and enjoy premium beauty products at unbeatable prices!</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Column 1: Quick Links -->
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press Releases</a></li>
+                  
+                </ul>
+            </div>
+    
+            <!-- Column 2: Help & Support -->
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#shipping">Shipping Information</a></li>
+                    
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Column 3: Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul class="social-media">
+                    <li><a href="#facebook"><img src="facebook-icon.png" alt="Facebook"></a></li>
+                    <li><a href="#twitter"><img src="twitter-icon.png" alt="Twitter"></a></li>
+                    <li><a href="#instagram"><img src="instagram-icon.png" alt="Instagram"></a></li>
+                    <li><a href="#youtube"><img src="youtube-icon.png" alt="YouTube"></a></li>
+                </ul>
+            </div>
+    
+            <!-- Column 4: Contact Info -->
+            <div class="footer-column">
+                <h3>Contact Information</h3>
+                <p>Email: <a href="mailto:Mattej@blinkee.com">Mattej@blinkee.com</a></p>
+                
+                
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 A.D.M store. All rights reserved.</p>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Use</a></li>
+                <li><a href="#cookies">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+<link rel="stylesheet" href="Style.CSS">
+    <script>
+        // JavaScript for Image Slider
+        const images = document.querySelectorAll('.cover-photo img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+
+        // JavaScript for Tabs
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+
+
+            const images = document.querySelectorAll('.cover-photo img');
+let currentIndex = 0;
+
+function showNextImage() {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+}
+
+setInterval(showNextImage, 3000); // Change image every 3 seconds
+        }
+
+        // Open the default tab
+        document.getElementById("Products").style.display = "block";
+    </script>
+</body>
+</html>
